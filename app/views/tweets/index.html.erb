@@ -3,25 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Twitter</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="tweets.scss">
 </head>
 
 <body>
   <header>
-    <ul>
-      <li><a href="#">ホーム</a></li>
-      <li><a href="#">通知</a></li>
-      <li><a href="#">メッセージ</a></li>
-    </ul>
+    <div>
+      <ul>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#">通知</a></li>
+        <li><a href="#">メッセージ</a></li>
+      </ul>
+    </div>
   </header>
   <section class="about">
-    <h2>About Twitter</h2>
-    <p>
-      このTwitterはRuby on Railsの学習のために、
-      作成したアプリです。
-    </p>
+    <div>
+      <h2>About Twitter</h2>
+      <p>
+        このTwitterは<br>
+        Ruby on Railsの学習用に、<br>
+        作成したアプリです。
+      </p>
+    </div>
   </section>
   <section class="tweets">
-    <p>ここにtweetを表示します。</p>
+    <div>
+      <p>ここにtweetを表示します。</p>
+    </div>
   </section>
 </body>
 </html>
