@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-  get 'tweets' => 'tweets#index'
-  post 'tweets' => 'tweets#create'
+  resources :tweets, only: [:index, :create, :edit, :update]
 end

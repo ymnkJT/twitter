@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   def index
     @tweet = Tweet.new
+    @tweets = Tweet.all
   end
   
   def new
@@ -8,6 +9,16 @@ class TweetsController < ApplicationController
   
   def create
     Tweet.create(tweets_params)
+    redirect_to tweets_path
+  end
+  
+  def edit
+    @tweet = Tweet.find(params[:id])
+  end
+  
+  def update
+    @tweet = Tweet.find(params[:id])
+    @tweet.update(tweets_params)
     redirect_to tweets_path
   end
   
