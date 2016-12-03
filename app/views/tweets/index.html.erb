@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <%= notice %>
   <header>
     <div>
       <ul>
@@ -40,6 +41,7 @@
       <div class="each_tweet">
         <p><%= tweet.content %></p>
         <%= link_to "編集", edit_tweet_path(tweet.id) %>
+        <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
       </div>
     <% end %>
   </section>
