@@ -27,6 +27,14 @@
       </p>
     </div>
   </section>
+  <section class="now_tweet">
+    <div>
+      <%= form_for(@tweet) do |f| %>
+        <%= f.text_field :content %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </section>
   <section class="tweets">
     <div>
       <p>ここにtweetを表示します。</p>
