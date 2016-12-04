@@ -4,9 +4,16 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
   end
 
+  def error
+  end
+  
   def create
-    Tweet.create(tweets_params)
-    redirect_to tweets_path, notice: "投稿が完了しました！"
+    @tweet = Tweet.new(tweets_params)
+    if @tweet.save
+      redirect_to tweets_path, notice: "投稿が完了しました！"
+    else
+      render :error
+    end
   end
   
   def edit
@@ -15,8 +22,11 @@ class TweetsController < ApplicationController
   
   def update
     @tweet = Tweet.find(params[:id])
-    @tweet.update(tweets_params)
-    redirect_to tweets_path, notice: "編集が完了しました！"
+    if @tweet.update(tweets_params)
+      redirect_to tweets_path, notice: "編集が完了しました！"
+    else
+      render :error
+    end
   end
   
   def destroy

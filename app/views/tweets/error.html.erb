@@ -18,16 +18,6 @@
       </ul>
     </div>
   </header>
-  <section class="about">
-    <div>
-      <h2>About Twitter</h2>
-      <p>
-        このTwitterは<br>
-        Ruby on Railsの学習用に、<br>
-        作成したアプリです。
-      </p>
-    </div>
-  </section>
   <section class="now_tweet">
     <div>
       <%= form_for(@tweet) do |f| %>
@@ -44,16 +34,8 @@
         <%= f.text_field :content %>
         <%= f.submit %>
       <% end %>
+      <%= link_to "ホームへ戻る", tweets_path %>
     </div>
-  </section>
-  <section class="tweets">
-    <% @tweets.each do |tweet| %>
-      <div class="each_tweet">
-        <p><%= tweet.content %></p>
-        <%= link_to "編集", edit_tweet_path(tweet.id) %>
-        <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
-      </div>
-    <% end %>
   </section>
 </body>
 </html>
