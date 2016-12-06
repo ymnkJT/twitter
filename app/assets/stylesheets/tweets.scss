@@ -11,38 +11,20 @@ h2 {
   font-size: 20px;
 }
 
-header {
-  background: white;
+.top_notice {
+  background-color: #00FFFF;
+}
+
+.bar-arrange {
+  background-color: white;
   border-style: solid;
   border-width: thin;
   border-color: #666666;
-  border-radius: 10px;
-}
-
-header ul {
-  list-style: none;
-}
-
-header ul a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #666666;
-}
-
-header ul:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-header li {
-  float: left;
-  width: auto;
 }
 
 .about {
   width: 100%;
+  padding: 10px;
   margin-top: 20px;
   background: white;
   border-style: solid;
@@ -74,4 +56,10 @@ header li {
 
 .tweets {
   border: 1px;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/glyphicons-halflings-regular.eot');
+  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
