@@ -26,12 +26,14 @@
             <%= f.text_field :content, class: 'form form-control', placeholder: "いまどうしてる？" %>
             <%= f.submit '投稿', class: 'button btn btn-primary' %>
           <% end %>
-  
+          <hr>
+          <hr>
           <div class="tweets">
             <% @tweets.each do |tweet| %>
               <p><%= tweet.content %></p>
               <%= link_to "編集", edit_tweet_path(tweet.id) %>
               <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+              <hr>
             <% end %>
           </div>
         </section>
