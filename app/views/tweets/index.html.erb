@@ -1,59 +1,41 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>Twitter</title>
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="tweets.scss">
-</head>
-
 <body>
-  <%= notice %>
-  <header>
-    <div>
-      <ul>
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#">通知</a></li>
-        <li><a href="#">メッセージ</a></li>
-      </ul>
-    </div>
-  </header>
-  <section class="about">
-    <div>
-      <h2>About Twitter</h2>
-      <p>
-        このTwitterは<br>
-        Ruby on Railsの学習用に、<br>
-        作成したアプリです。
-      </p>
-    </div>
-  </section>
-  <section class="now_tweet">
-    <div>
-      <%= form_for(@tweet) do |f| %>
-        <% if @tweet.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= @tweet.errors.count %>件のエラーがあります。</h2>
-            <ul>
-              <% @tweet.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-        <%= f.text_field :content %>
-        <%= f.submit %>
-      <% end %>
-    </div>
-  </section>
-  <section class="tweets">
-    <% @tweets.each do |tweet| %>
-      <div class="each_tweet">
-        <p><%= tweet.content %></p>
-        <%= link_to "編集", edit_tweet_path(tweet.id) %>
-        <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <section class="about">
+          <h2>About Twitter</h2>
+          <p>
+            このTwitterはRuby on Railsの学習用に、作成したアプリです。
+          </p>
+        </section>
       </div>
-    <% end %>
-  </section>
+      
+      <div class="col-xs-12 col-sm-8">
+        <section class="tweet_box">
+          <%= form_for(@tweet) do |f| %>
+            <% if @tweet.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= @tweet.errors.count %>件のエラーがあります。</h2>
+                <ul>
+                  <% @tweet.errors.full_messages.each do |msg| %>
+            　      <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <%= f.text_field :content, class: 'form form-control' %>
+            <%= f.submit '投稿', class: 'button btn btn-primary' %>
+          <% end %>
+  
+          <div class="tweets">
+            <% @tweets.each do |tweet| %>
+              <p><%= tweet.content %></p>
+              <%= link_to "編集", edit_tweet_path(tweet.id) %>
+              <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+            <% end %>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
 </body>
-</html>

@@ -3,23 +3,20 @@ body {
   margin: 0 auto;
 }
 
-div {
+h2,p {
+  color: #666666;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+header {
   background: white;
   border-style: solid;
   border-width: thin;
   border-color: #666666;
   border-radius: 10px;
-}
-
-header li {
-  float: left;
-  width: auto;
-}
-
-header ul:after {
-  content: "";
-  display: block;
-  clear: both;
 }
 
 header ul {
@@ -33,32 +30,48 @@ header ul a {
   color: #666666;
 }
 
+header ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+header li {
+  float: left;
+  width: auto;
+}
+
 .about {
-  width: 25%;
-  padding: 15px;
+  width: 100%;
+  margin-top: 20px;
+  background: white;
+  border-style: solid;
+  border-width: thin;
+  border-color: #666666;
+  border-radius: 10px;
+}
+
+.tweet_box {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background: white;
+  border-style: solid;
+  border-width: thin;
+  border-color: #666666;
+  border-radius: 10px;
+}
+
+.form {
+  width: 80%;
   float: left;
 }
 
-.now_tweet {
-  width: 60%;
-  padding: 15px;
+.button {
+  width: 20%;
   float: right;
 }
 
 .tweets {
-  width: 60%;
-  padding: 15px;
-  float: right;
-}
-
-.each_tweet {
-  border-radius: 0;
-}
-
-h2 {
-  color: #666666;
-}
-
-p {
-  color: #666666;
+  border: 1px;
 }

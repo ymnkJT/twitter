@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>Twitter</title>
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="tweets.scss">
-</head>
-
 <body>
-  <%= notice %>
-  <header>
-    <div>
-      <ul>
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#">通知</a></li>
-        <li><a href="#">メッセージ</a></li>
-      </ul>
-    </div>
-  </header>
-  <section class="now_tweet">
-    <div>
-      <%= form_for(@tweet) do |f| %>
-        <% if @tweet.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= @tweet.errors.count %>件のエラーがあります。</h2>
-            <ul>
-              <% @tweet.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-        <%= f.text_field :content %>
-        <%= f.submit %>
-      <% end %>
-    </div>
-  </section>
+  <%= render 'form' %>
 </body>
 </html>
