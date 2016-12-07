@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to tweets_path, notice: "投稿が完了しました！"
     else
-      render :error
+      render :index
     end
   end
   
