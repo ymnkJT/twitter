@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
   
   def create
     @tweet = Tweet.new(tweets_params)
+    @tweets = Tweet.all
     if @tweet.save
       redirect_to tweets_path, notice: "投稿が完了しました！"
     else
